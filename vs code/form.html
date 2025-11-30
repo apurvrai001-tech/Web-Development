@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Registration Form
+    </title>
+    <style>
+        .registration-form {
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+
+        .registration-form fieldset {
+            border: 1px solid #666;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        .registration-form legend {
+            font-weight: bold;
+            padding: 0 10px;
+            font-size: 1.1em;
+        }
+
+        .registration-form label {
+            display: block;
+            /* Ensures labels take full width */
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"],
+        .registration-form input[type="tel"] {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="registration-form">
+        <h2>Registration Form</h2>
+
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="dob">Date of Birth: (dd-mm-yyyy)</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile">
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+
+            <p>Gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+
+            <input type="radio" id="other_gender" name="gender" value="other">
+            <label for="other_gender">Other</label>
+
+            <p>Skills (Choose multiple):</p>
+            <input type="checkbox" id="html" name="skill" value="html">
+            <label for="html">HTML</label><br>
+
+            <input type="checkbox" id="css" name="skill" value="css">
+            <label for="css">CSS</label><br>
+
+            <input type="checkbox" id="javascript" name="skill" value="javascript">
+            <label for="javascript">JavaScript</label><br>
+
+            <input type="checkbox" id="python" name="skill" value="python">
+            <label for="python">Python</label>
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
