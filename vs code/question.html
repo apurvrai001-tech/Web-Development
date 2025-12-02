@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signupstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="signup-page">
+        <form name="signup" class="signup-form" action="action_page.php" method="post"
+            onsubmit="return validateSignup()">
+            <div class="card">
+                <div class="card-header">
+                    <div class="avatar" aria-hidden="true"></div>
+                    <h1>Create Account</h1>
+                    <p class="subtitle">Quick and secure sign up</p>
+                </div>
+
+                <div class="card-body">
+                    <label for="custname">Name</label>
+                    <input id="custname" name="custname" type="text" placeholder="Enter your full name" required>
+
+                    <label for="cid">Customer ID</label>
+                    <input id="cid" name="cid" type="text" placeholder="Enter your customer id" required>
+
+                    <label for="accno">Account number</label>
+                    <input id="accno" name="accno" type="text" inputmode="numeric" pattern="\d+"
+                        placeholder="Enter your account number" required>
+
+                    <label for="mobno">Mobile number</label>
+                    <input id="mobno" name="mobno" type="tel" inputmode="tel" pattern="^\d{7,15}$"
+                        placeholder="Enter your mobile number" required>
+
+                    <label for="pass">Create password</label>
+                    <input id="pass" name="pass" type="password" placeholder="Enter your password" minlength="6"
+                        required>
+
+                    <label for="cpass">Confirm password</label>
+                    <input id="cpass" name="cpass" type="password" placeholder="Confirm password" minlength="6"
+                        required>
+
+                    <button type="submit" class="btn">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        function validateSignup() {
+            const form = document.forms['signup'];
+            const pass = form.pass.value;
+            const cpass = form.cpass.value;
+            if (pass !== cpass) {
+                alert('Passwords do not match.');
+                form.cpass.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
